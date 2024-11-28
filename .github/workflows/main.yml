@@ -29,7 +29,7 @@ jobs:
 
       - name: Lint the code V2
         run: pylint --errors-only --disable=C0301 --disable=C0326 *.py
-        
+
       - name: Run the unit test of the application
         run: python -m unittest --verbose --failfast
   build:  # Nom du job
@@ -51,7 +51,7 @@ jobs:
         with:  # Avec ces paramètres
           registry: ghcr.io  # URL du registre
           username: ${{ github.actor }}  # Nom d'utilisateur GitHub
-          password: ${{ secrets.GITHUB_TOKEN }}  # `GITHUB_TOKEN` pour l'authentification
+          password: ${{ secrets.DOCKER_TOKEN }}  # `GITHUB_TOKEN` pour l'authentification
 
       - name: get metadata  # Récupère les métadonnées pour Docker
         id: metadata  # ID pour cette étape
