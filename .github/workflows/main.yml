@@ -19,7 +19,7 @@ jobs:
             pylint  \
             pytest \
             pytest-flask
-      - name: Lint the code
-        run: |
-          flake8 --ignore=E501,E231 *.py
-          pylint --errors-only --disable=C0301 --disable=C0326 *.py
+      - name: Lint the code V1
+        run: flake8 --ignore=E501,E231 *.py
+      - name: Lint the code V2
+        run: pylint --errors-only --disable=C0301 --disable=C0326 *.py
