@@ -20,7 +20,9 @@ jobs:
             pytest \
             pytest-flask
       - name: Lint the code V1
-        run: flake8 --ignore=E501,E231 *.py
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Lint the code V2
         run: pylint --errors-only --disable=C0301 --disable=C0326 *.py
       - name: Run the unit test of the application
