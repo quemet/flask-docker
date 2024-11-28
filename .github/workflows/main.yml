@@ -55,8 +55,6 @@ jobs:
       - name: get metadata  # Récupère les métadonnées pour Docker
         id: metadata  # ID pour cette étape
         uses: docker/metadata-action@v5  # Utilise l'action de métadonnées
-        with:
-          images: quemet/${{ github.repository }}  # Utilise le nom dur repository
           
       - name: Get current date # get the date of the build
         id: date
