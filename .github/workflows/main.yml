@@ -12,3 +12,13 @@ jobs:
           python-version: '3.12'
       - name: Check pip version
         run: pip --version
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip && \
+          pip install \
+              Flask \
+              flake8 \
+              pylint  \
+              pytest \
+              pytest-flask
+    
