@@ -21,5 +21,5 @@ jobs:
               pytest-flask
       - name: Lint the code
         run: |
-          flake8 --ignore=E501,E231 *.py
-          pylint --errors-only --disable=C0301 --disable=C0326 *.py
+          flake8 --ignore=E501,E231 *.py && \
+              pylint --errors-only --disable=C0301 --disable=C0326 *.py
