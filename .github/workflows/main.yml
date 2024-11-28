@@ -14,12 +14,11 @@ jobs:
         run: |
           pip install --upgrade pip && \
           pip install \
-              Flask \
-              flake8 \
-              pylint  \
-              pytest \
-              pytest-flask
+            Flask \
+            flake8 \
+            pylint  \
+            pytest \
+            pytest-flask
       - name: Lint the code
         run: |
-          flake8 --ignore=E501,E231 *.py && \
-              pylint --errors-only --disable=C0301 --disable=C0326 *.py
+          flake8 --ignore=E501,E231 *.py && pylint --errors-only --disable=C0301 --disable=C0326 *.py
