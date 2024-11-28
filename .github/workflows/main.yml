@@ -56,7 +56,7 @@ jobs:
         id: metadata  # ID pour cette étape
         uses: docker/metadata-action@v5  # Utilise l'action de métadonnées
         with:
-          images: ghcr.io/${{ github.repository }}/  # Utilise le nom dur repository
+          images: quemet/${{ github.repository }}  # Utilise le nom dur repository
           
       - name: Get current date # get the date of the build
         id: date
