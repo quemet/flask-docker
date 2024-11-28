@@ -10,8 +10,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check pip version
-        run: pip --version
       - name: Install dependencies
         run: |
           pip install --upgrade pip && \
@@ -21,4 +19,7 @@ jobs:
               pylint  \
               pytest \
               pytest-flask
-    
+      - name: Lint the code
+        run: |
+          flake8 --ignore=E501,E231 *.py
+          pylint --errors-only --disable=C0301 --disable=C0326 *.py
