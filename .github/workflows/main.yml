@@ -23,3 +23,5 @@ jobs:
         run: flake8 --ignore=E501,E231 *.py
       - name: Lint the code V2
         run: pylint --errors-only --disable=C0301 --disable=C0326 *.py
+      - name: Run the unit test of the application
+        run: python -m unittest --verbose --failfast
