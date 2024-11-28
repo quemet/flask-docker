@@ -1,0 +1,14 @@
+name: Workflow
+on: [push]
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check pip version
+        run: pip --version
